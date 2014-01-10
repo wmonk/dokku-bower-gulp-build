@@ -17,7 +17,7 @@ cd /app &&
 EOF
 )
 
-if [[ -f /app/Gruntfile.js ]]; then
+#if [[ -f /app/Gruntfile.js ]]; then
   echo '-----> Installing Grunt'
   id=$(docker run -d $IMAGE /bin/bash -c "$GRUNTINSTALL")
   docker attach $id
@@ -28,4 +28,4 @@ if [[ -f /app/Gruntfile.js ]]; then
   docker attach $id
   test $(docker wait $id) -eq 0
   docker commit $id $IMAGE > /dev/null
-fi
+#fi
