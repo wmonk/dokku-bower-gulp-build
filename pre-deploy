@@ -17,7 +17,6 @@ cd /app &&
 EOF
 )
 
-
 echo '-----> Installing Grunt'
 id=$(docker run -d $IMAGE /bin/bash -c "$GRUNTINSTALL")
 docker attach $id
