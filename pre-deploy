@@ -17,15 +17,14 @@ cd /app &&
 EOF
 )
 
-#if [[ -f /app/Gruntfile.js ]]; then
-  echo '-----> Installing Grunt'
-  id=$(docker run -d $IMAGE /bin/bash -c "$GRUNTINSTALL")
-  docker attach $id
-  test $(docker wait $id) -eq 0
-  docker commit $id $IMAGE > /dev/null
-  echo '-----> Running Grunt Tasks'
-  id=$(docker run -d $IMAGE /bin/bash -c "$TASKSRUN")
-  docker attach $id
-  test $(docker wait $id) -eq 0
-  docker commit $id $IMAGE > /dev/null
-#fi
+
+echo '-----> Installing Grunt'
+id=$(docker run -d $IMAGE /bin/bash -c "$GRUNTINSTALL")
+docker attach $id
+test $(docker wait $id) -eq 0
+docker commit $id $IMAGE > /dev/null
+echo '-----> Running Grunt Tasks'
+id=$(docker run -d $IMAGE /bin/bash -c "$TASKSRUN")
+docker attach $id
+test $(docker wait $id) -eq 0
+docker commit $id $IMAGE > /dev/null
