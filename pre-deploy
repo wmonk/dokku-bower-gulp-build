@@ -13,7 +13,7 @@ EOF
 TASKSRUN=$(cat <<EOF
 PATH=$PATH:/app/vendor/node/bin &&
 cd /app &&
-./node_modules/bower/bin/grunt build
+./node_modules/grunt-cli/bin/grunt build
 EOF
 )
 
