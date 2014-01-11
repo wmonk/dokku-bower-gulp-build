@@ -6,7 +6,7 @@ APP="$1";  IMAGE="$2"
 GRUNTINSTALL=$(cat <<EOF
 PATH=$PATH:/app/vendor/node/bin &&
 cd /app &&
-if [ -f ./node_modules/grunt-cli/bin/grunt ]
+if [ -f "./node_modules/grunt-cli/bin/grunt" ]
 then
   echo 'grunt-cli already installed. Skipping...'
 else
@@ -18,7 +18,7 @@ EOF
 TASKSRUN=$(cat <<EOF
 PATH=$PATH:/app/vendor/node/bin &&
 cd /app &&
-if [ -f ./Gruntfile.js ]
+if [ -f "./Gruntfile.js" ]
 then
   ./node_modules/grunt-cli/bin/grunt build
 else
