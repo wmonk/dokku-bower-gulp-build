@@ -5,8 +5,7 @@ This plugin will install Bower and pull in dependencies. It will then
 install grunt-cli and run the 'build' task. Any Grunt specific node
 modules other than grunt-cli should be specified in Gruntfile.js.
 
-Install
-=================
+## Install
 
 On your dokku server run:
 ```sh
