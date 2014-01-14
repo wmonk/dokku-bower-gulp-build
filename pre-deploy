@@ -7,6 +7,8 @@ RUN=$(cat <<EOF
 PATH=$PATH:/app/vendor/node/bin &&
 cd /app &&
 
+sleep 1
+
 echo '-----> Installing Bower'
 if [ -f "./node_modules/bower/bin/bower" ]
 then
@@ -41,7 +43,6 @@ fi
 EOF
 )
 
-echo '-----> Installing bower'
 id=$(docker run -d $IMAGE /bin/bash -c "$RUN")
 docker attach $id
 test $(docker wait $id) -eq 0
