@@ -25,20 +25,20 @@ else
   echo 'bower.json missing. Nothing to install...'
 fi
 
-echo '-----> Installing grunt-cli'
-if [ -f "./node_modules/grunt-cli/bin/grunt" ]
+echo '-----> Installing gulp'
+if [ -f "./node_modules/gulp/bin/gulp.js" ]
 then
-  echo 'grunt-cli already installed. Skipping...'
+  echo 'gulp already installed. Skipping...'
 else
-  npm install grunt-cli
+  npm install gulp
 fi
 
 echo '-----> Runnging Tasks'
-if [ -f "./Gruntfile.js" ]
+if [ -f "./gulpfile.js" ]
 then
-  ./node_modules/grunt-cli/bin/grunt build
+  ./node_modules/gulp/bin/gulp.js build
 else
-  echo 'Gruntfile.js is missing. No tasks to run...'
+  echo 'gulpfile.js is missing. No tasks to run...'
 fi
 EOF
 )
