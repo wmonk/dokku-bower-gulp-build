@@ -34,7 +34,7 @@ else
 fi
 
 echo '-----> Running Tasks'
-if [ -f "./gulpfile.js" || -f "./Gulpfile.js" ]
+if [ [ -f "./gulpfile.js" ] || [ -f "./Gulpfile.js" ] ]
 then
   ./node_modules/gulp/bin/gulp.js build
 else
